@@ -1,62 +1,54 @@
-📄 PDF Table Extractor + Data Pipeline (ANS)
+# 📄 PDF Table Extractor + Data Pipeline (ANS)
 
-Projeto em Python para extração automática de tabelas de arquivos PDF, transformação de dados com pandas e exportação final em arquivo .zip.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/Pandas-Data%20Processing-150458?style=for-the-badge&logo=pandas" />
+  <img src="https://img.shields.io/badge/PDFPlumber-PDF%20Extraction-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/CSV-Export-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ZIP-Compression-orange?style=for-the-badge" />
+</p>
 
-📌 Sobre
+<p align="center">
+  Pipeline automatizado para extração, transformação e exportação de tabelas de arquivos PDF da ANS.
+</p>
 
-Este projeto lê um arquivo PDF contendo tabelas, extrai os dados automaticamente, realiza limpeza e padronização e gera um arquivo final em CSV compactado em ZIP.
+---
 
-🧰 Tecnologias
-Python 3.x
-pandas
-pdfplumber
-zipfile (nativo)
-os (nativo)
-datetime (nativo)
-⚙️ Fluxo do Processo
-Leitura do PDF
-Extração de tabelas por página
-Conversão para DataFrame (pandas)
-Transformação e limpeza dos dados
-Geração de CSV temporário
-Compactação em ZIP
-Remoção do CSV
-🚀 Instalação
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-pip install pandas pdfplumber
-▶️ Como Executar
+## 📌 Sobre o Projeto
 
-Coloque o arquivo PDF na raiz do projeto:
+Este projeto foi desenvolvido em **Python** para automatizar a extração de tabelas contidas em arquivos PDF da **ANS (Agência Nacional de Saúde Suplementar)**.
 
-anexo1.pdf
+O sistema realiza:
 
-Execute o script:
+- 📥 Leitura automática do PDF
+- 📊 Extração de tabelas em múltiplas páginas
+- 🧹 Limpeza e padronização dos dados
+- 🗃 Conversão para CSV
+- 📦 Compactação automática em `.zip`
 
-python main.py
-📥 Entrada e Saída
-Entrada
-anexo1.pdf
-Saída
-Teste_{timestamp}.zip
+Tudo isso sem necessidade de Java ou ferramentas externas complexas.
 
-Conteúdo do ZIP:
+---
 
-Rol_Procedimentos_ANS.csv
-🔧 Transformações Aplicadas
-OD → Seg. Odontológica
-AMB → Seg. Ambulatorial
-Remoção de linhas vazias
-Reset do índice
-Junção de tabelas de múltiplas páginas
-🗂 Estrutura do Projeto
-.
-├── main.py
-├── anexo1.pdf
-└── README.md
-✨ Funcionalidades
-Extração de tabelas de PDF sem Java
-Processamento de múltiplas páginas
-Limpeza automática dos dados
-Exportação para CSV
-Compactação em ZIP com timestamp
+# 🧰 Tecnologias Utilizadas
+
+| Tecnologia | Função |
+|------------|--------|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="18"/> **Python 3.x** | Linguagem principal |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="18"/> **Pandas** | Manipulação e transformação dos dados |
+| 📄 **pdfplumber** | Extração de tabelas do PDF |
+| 🗜 **zipfile** | Compactação do arquivo final |
+| 📁 **os** | Manipulação de arquivos |
+| ⏰ **datetime** | Geração de timestamp |
+
+---
+
+# ⚙️ Fluxo do Processo
+
+```mermaid
+flowchart TD
+    A[📄 Leitura do PDF] --> B[📊 Extração das tabelas]
+    B --> C[🧹 Limpeza e transformação]
+    C --> D[📁 Conversão para CSV]
+    D --> E[📦 Compactação ZIP]
+    E --> F[🗑 Remoção do CSV temporário]
